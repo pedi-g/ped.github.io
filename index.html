@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pedram Ghahramani — Home</title>
+  <meta name="description" content="Homepage of Pedram Ghahramani, PhD student in evolutionary biology and ecology." />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #111821;
+      --text: #e6eef7;
+      --muted: #a9b6c7;
+      --accent: #36c3a9;
+      --ring: rgba(54,195,169,0.35);
+    }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% -10%, #13202d 0%, transparent 60%),
+                  radial-gradient(1000px 500px at 120% 10%, #0f1b24 0%, transparent 55%),
+                  var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(to bottom, rgba(11,15,20,.85), rgba(11,15,20,.60));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      z-index: 50;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .9rem 0;
+    }
+
+    .brand { font-weight: 700; letter-spacing: .2px; }
+    .brand a { color: var(--text); text-decoration: none; }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 1rem;
+      border-radius: 999px;
+      padding: .45rem .8rem;
+    }
+    nav a:hover, nav a:focus { color: var(--text); background: rgba(255,255,255,0.06); outline: none; }
+
+    .hero {
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      overflow: clip;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/mangrove.jpg'); /* Place your file at images/mangrove.jpg */
+      background-size: cover;
+      background-position: center;
+      opacity: .28; /* decorative wash */
+      filter: saturate(1.2) contrast(1.05);
+    }
+
+    .hero-inner {
+      position: relative;
+      padding: clamp(3rem, 6vw, 6rem) 0 clamp(2.25rem, 4.5vw, 3.5rem);
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: clamp(1.25rem, 3vw, 2rem);
+      align-items: center;
+    }
+
+    .avatar {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.9);
+      box-shadow: 0 10px 30px rgba(0,0,0,.45), 0 0 0 10px var(--ring);
+      background: #0e141b;
+    }
+
+    h1 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); margin: 0 0 .35rem; }
+    .subtitle { color: var(--muted); margin: 0; max-width: 60ch; }
+
+    main { padding: 2.25rem 0 4rem; }
+
+    section { padding: 2rem 0; }
+    section + section { border-top: 1px solid rgba(255,255,255,0.06); }
+
+    .section-title { font-size: 1.35rem; margin: 0 0 .75rem; letter-spacing: .2px; }
+    .lead { color: var(--muted); max-width: 70ch; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.25rem;
+    }
+    .col-7 { grid-column: span 7; }
+    .col-5 { grid-column: span 5; }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 1.25rem 1.25rem 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+
+    ul.clean { list-style: none; padding: 0; margin: .5rem 0 0; }
+    ul.clean li { margin: .35rem 0; color: var(--muted); }
+
+    .tag {
+      display: inline-block; font-size: .85rem; line-height: 1; padding: .45rem .6rem; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14); margin: .25rem .35rem .25rem 0; color: var(--text);
+      background: rgba(255,255,255,.03);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      padding: 1.25rem 0 2.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .avatar { margin: 0 auto; }
+      .grid { grid-template-columns: 1fr; }
+      .col-7, .col-5 { grid-column: 1 / -1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><a href="#top">Pedram Ghahramani</a></div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top" aria-label="Decorative mangrove banner">
+    <div class="hero-media" aria-hidden="true" role="presentation"></div>
+    <div class="container hero-inner">
+      <img src="images/pedram.jpg" width="280" height="280" alt="Portrait of Pedram Ghahramani" class="avatar" />
+      <div>
+        <h1>Pedram Ghahramani</h1>
+        <p class="subtitle">PhD student in evolutionary biology & ecology. I study biodiversity patterns, functional traits, and how ecosystems—especially mangroves—respond to environmental change.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="about">
+      <h2 class="section-title">About me</h2>
+      <p class="lead">I investigate how biodiversity is structured across space and time, with a focus on functional diversity and the mechanisms that sustain ecosystem resilience. My work combines field sampling, quantitative ecology, and reproducible analysis in <strong>R</strong> and <strong>Python</strong>. I have led and contributed to research on macrobenthic communities in Persian Gulf mangrove systems and comparative studies of natural versus restored habitats.</p>
+      <div>
+        <span class="tag">Functional diversity</span>
+        <span class="tag">Trait-based ecology</span>
+        <span class="tag">Mangrove ecosystems</span>
+        <span class="tag">Biodiversity time series</span>
+        <span class="tag">Spatial analysis (QGIS)</span>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2 class="section-title">Research</h2>
+      <div class="grid">
+        <div class="col-7">
+          <div class="card">
+            <h3 style="margin-top:0">Ecosystem function in mangroves</h3>
+            <p>Using trait-based metrics (e.g., FRic, FEve) and community composition to compare natural and planted mangroves. Analyses integrate environmental gradients (temperature, salinity, pH, sediment granulometry, TOM) across seasons and habitats (mangrove vs. mudflat).</p>
+            <ul class="clean" aria-label="Key takeaways">
+              <li>Links between habitat heterogeneity and functional redundancy</li>
+              <li>Implications for restoration design and monitoring</li>
+              <li>Open, reproducible workflows</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="card">
+            <h3 style="margin-top:0">Current directions</h3>
+            <ul class="clean">
+              <li>Lepidoptera diversity change in time-series datasets</li>
+              <li>Light pollution as a driver of community reassembly</li>
+              <li>Trait syndromes linked to resilience under warming</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="lead">Email: <a href="mailto:pedram.ghahramani@example.com" style="color:var(--text)">pedram.ghahramani@example.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="y"></span> Pedram Ghahramani. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
